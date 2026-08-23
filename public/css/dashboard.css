@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #e8edf5;
+}
+
+.pageLayout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+    align-items: start
+}
+
+/* =============== Left side Bar ============ */
+
+.sidebar {
+    background: #0e233a;
+    color: #f4f6f9;
+    padding: 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 25px;
+}
+
+.sidebar h2 {
+    color: #ffd001;
+    box-shadow: 0 3px 5px #ffd001;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.sidebar ul li {
+    margin-bottom: 25px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #f4f6f9;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.sidebar ul li:hover {
+    transition: 0.5s;
+    /* text-decoration: underline red; */
+}
+.iconHide {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #ffd001;
+}
+
+.sidebar ul li a:hover .iconHide {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+}
+
+.bottomMenu {
+    margin-top: auto;
+}
+/* ====================================== */
+
+
+
+
+
+/* ========================= Main ================== */
+.main {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #0e233a;
+    /* background: linear-gradient(to right, #0e233a, #1a81ee); */
+}
+
+.box-header{
+     background: linear-gradient(to right, #0e233a, #60aaf8);
+     padding: 10px;
+     border-radius: 5px;
+     color: #ffff;
+}
+
+header input {
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header input::after {
+    border: 1px solid #ffd001;
+    outline: none;
+}
+
+.search-box .fa-magnifying-glass{
+    position: absolute;
+    padding: 10px;
+    color: #0e233a;
+}
+/* =======================box 1================= */
+.box{
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(to right, #0e233a, #60aaf8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.box h2{
+    color: rgb(249, 246, 246);
+    margin-bottom: 20px;
+}
+
+/* ======================Parents cards 1======================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card h2{
+    color: black;
+}
+
+.card {
+    background: #f4f6f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================Parents cards 2======================== */
+.cards-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cards-two .card{
+    text-align: left;
+    background-color: #fdfdfd;
+}
+
+.graphBoard{
+    margin-top: 15px;
+}
+
+
+
+
+/* ============================Responsive========================== */
+@media (max-width: 932px) {
+    .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sidebar h2 {
+        font-size: 13px;
+        max-width: 150px;
+    }
+
+    .sidebar ul li a{
+        font-size: 11px;
+    }
+    .pageLayout {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    }
+    header h2{
+        font-size: 12px;
+    }
+    header input{
+        padding: 2px 0;
+    }
+}
