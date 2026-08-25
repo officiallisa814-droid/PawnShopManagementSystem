@@ -22,3 +22,6 @@ Route::get('/dashboard', function () {
 Route::get('/customer', function () {
     return view('customer');
 })->name('customer');
+Route::get('/pawnitem', function () {
+    return view('pawnitem');
+})->name('pawnitem');

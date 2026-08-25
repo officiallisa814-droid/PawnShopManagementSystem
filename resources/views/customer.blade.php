@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="{{route('dashboard')}}"><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
                         <li><a href=""><i class="fa-solid fa-people-roof iconHide"></i> Customer</a></li>
-                        <li><a href=""><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
+                        <li><a href="{{ route('pawnitem') }}"><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
                         <li><a href=""><i class="fa-solid fa-box iconHide"></i> Item Appraisal</a></li>
                         <li><a href=""><i class="fa-solid fa-landmark iconHide"></i> Loan cintract</a></li>
                     </ul>

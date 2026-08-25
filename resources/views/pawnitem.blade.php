@@ -8,7 +8,7 @@
         integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
-    <title>dashboard</title>
+    <title>Pawn Item</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href=""><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
                         <li><a href="{{ route('customer') }}"><i class="fa-solid fa-people-roof iconHide"></i> Customer</a></li>
-                        <li><a href="{{ route('pawnitem') }}"><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
+                        <li><a href=""><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
                         <li><a href=""><i class="fa-solid fa-box iconHide"></i> Item Appraisal</a></li>
                         <li><a href=""><i class="fa-solid fa-landmark iconHide"></i> Loan cintract</a></li>
                     </ul>
@@ -81,33 +81,7 @@
             </section>
 
             <section class="graphBoard">
-                <div class="cards-two">
-                    <div class="card">
-                        <h2>Total Customers</h2>
-                        <h3>200 users</h3>
-                        <p>200 users</p>
-                        <p>200 users</p>
-                    </div>
-
-                    <div class="card">
-                        <h2>Items Ready for Auction</h2>
-                        <h3>30</h3>
-                        <!-- <p>200 users</p> -->
-                    </div>
-                    <div class="card">
-                        <h2>Total Customers</h2>
-                        <h3>200 users</h3>
-                        <p>200 users</p>
-                        <p>200 users</p>
-                    </div>
-
-                    <div class="card">
-                        <h2>Items Ready for Auction</h2>
-                        <h3>30</h3>
-                        <!-- <p>200 users</p> -->
-                    </div>
-                   
-                </div>
+                
             </section>
            
         </main>
