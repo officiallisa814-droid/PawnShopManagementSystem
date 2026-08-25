@@ -71,12 +71,15 @@ body {
 .sidebar ul li a:hover {
     color: #ffd001;
 }
+.sidebar ul li a.active {
+    color: #ffd001;
+}
 
 .sidebar ul li a:hover .iconHide {
     opacity: 1;
     transform: translateX(0);
 }
-.sidebar ul li a.active .iconHide {
+.sidebar ul li a:active .iconHide {
     opacity: 1;
     transform: translateX(0);
 }
@@ -209,7 +212,8 @@ header input::after {
 table{
     border: 1px solid rgb(206, 206, 206);
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 table td{
     padding: 10px;

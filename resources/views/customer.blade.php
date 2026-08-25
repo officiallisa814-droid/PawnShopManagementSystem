@@ -20,8 +20,8 @@
                 <div class="topMenu">
                     <h2>Pawn System</h2>
                     <ul>
-                        <li><a href="{{route('dashboard')}}"><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
-                        <li><a href=""><i class="fa-solid fa-people-roof iconHide"></i> Customer</a></li>
+                        <li class=""><a href="{{ route('dashboard') }}"><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
+                        <li><a href="{{ route('customer') }}"><i class="fa-solid fa-people-roof iconHide"></i> Customer</a></li>
                         <li><a href="{{ route('pawnitem') }}"><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
                         <li><a href=""><i class="fa-solid fa-box iconHide"></i> Item Appraisal</a></li>
                         <li><a href=""><i class="fa-solid fa-landmark iconHide"></i> Loan cintract</a></li>
@@ -65,6 +65,9 @@
             </section>
 
 <!-- ============================== Pop-up Layout ======================== -->
+    <form action="{{ route('customer.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf <!-- 2. Added Laravel's mandatory CSRF Security Token -->
+
     <div class="popup">
         <!-- ==============================Pop header================= -->
         <h4>Add a New Customer</h4>
@@ -78,22 +81,25 @@
             
             <div class="layout-name">
                 <p>Full Name (Khmer/English) <span style="color: red;">*</span></p><br>
-                <input type="text" class="input-fullName" name="full-name" placeholder="Full Name">
+                <!-- NOTE: Change your Controller validation rule from 'name' to 'full-name' if using this input name -->
+                <input type="text" class="input-fullName" name="full-name" placeholder="Full Name" required>
 
                 <div class="grid-layout-id">
                     <div class="passport-type">
                         <p>ID/Passport Type</p><br>
                         <select class="national-id" name="national-id" id="">
-                            <option value="">National ID</option>
-                            <option value="">Cambodia</option>
-                            <option value="">China</option>
-                            <option value="">America</option>
+                            <!-- 3. FIX: Values added to options so the database gets the string data -->
+                            <option value="national_id">National ID</option>
+                            <option value="cambodia">Cambodia</option>
+                            <option value="china">China</option>
+                            <option value="america">America</option>
                         </select>
                     </div>
 
                     <div class="passort-number">
-                    <p>ID/Passport Number</p><br>
-                        <input type="text" class="passport-num"   name="passport-num" placeholder="ID Passport">
+                        <p>ID/Passport Number</p><br>
+                        <!-- NOTE: Change your Controller validation from 'passport' to 'passport-num' -->
+                        <input type="text" class="passport-num" name="passport-num" placeholder="ID Passport" required>
                     </div>
                 </div>
 
@@ -109,7 +115,8 @@
                 <input type="date" class="date" name="date"><br>
                 <br>
                 <p>Phone Number1</p><br>
-                <input type="number" name="phone-num1" class="phone-num1" placeholder="Phone Number 1"><br>
+                <!-- NOTE: Change your Controller validation from 'phone' to 'phone-num1' -->
+                <input type="number" name="phone-num1" class="phone-num1" placeholder="Phone Number 1" required><br>
             </div>
 
             <div class="id-upload">
@@ -117,15 +124,14 @@
                 <input type="file" class="upload-file" name="upload-file"><br>
                 <br>
                 <p>Phone Number2</p><br>
-                <input type="number" name="phone-num2"
-                class="phone-num2" placeholder="Phone Number 2"><br>
+                <input type="number" name="phone-num2" class="phone-num2" placeholder="Phone Number 2"><br>
             </div>
          </div>
 
          <!--==================== Home Address =================  -->
          <div class="layout-home-address">
             <p>Home Address</p><br>
-            <input type="address" name="address" class="address" placeholder="Home Address">
+            <input type="text" name="address" class="address" placeholder="Home Address">
          </div>
 
          <!-- ================================Emergency Contact Name ============-->
@@ -136,10 +142,11 @@
                 <input type="text" name="emer-name" class="emer-name" placeholder="Emergency Name"><br>
 
                 <p>Initial Pawn Amount (option)</p><br>
-                <button class="btn-money">$0.00</button>
+                <!-- Changed to a type="button" so it doesn't accidentally trigger a form submission -->
+                <button type="button" class="btn-money">$0.00</button>
 
                 <p>Note</p>
-                    <input type="text" class="note" name="note" placeholder="note">
+                <input type="text" class="note" name="note" placeholder="note">
             </div>
 
             <div class="emergency-phone">
@@ -147,26 +154,29 @@
                 <input type="text" name="emer-phone" class="emer-phone" placeholder="Emergency Phone"><br>
 
                 <p>Initial Pawn Amount (option)</p><br>
+                <!-- NOTE: Change your Controller validation from 'pledge' to 'item' -->
                 <select name="item" class="item">
                     <option value="">Select Item Type</option>
-                    <option value="">Select Item Type</option>
-                    <option value="">Select Item Type</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="vehicle">Vehicle</option>
                 </select>
             </div>
          </div>
-            <br>
+         <br>
          <!-- ====================Footer Pup=============== -->
           <div class="footer-pup">
-                <div>
-                    
-                </div>
+                <div></div>
                 
                 <div>
-                    <button class="btn-cancel">Cancel</button>
-                    <button class="btn-save">Save</button>
+                    <!-- type="button" ensures Cancel doesn't submit the form -->
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <!-- type="submit" fires the POST action to Laravel -->
+                    <button type="submit" class="btn-save">Save</button>
                 </div>
           </div>
     </div>
+</form>
 
     <!-- ============================= Java Alert Pup================= -->
     <script>
@@ -211,7 +221,7 @@
 
                 <div class="customer-table">
                     <h3>Customer Lists</h3>
-                    <table border="1">
+                    <table border="1" >
                         <tr>
                             <td>ID</td>
                             <td>Name</td>

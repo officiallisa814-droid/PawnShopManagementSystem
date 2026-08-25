@@ -20,9 +20,9 @@
                 <div class="topMenu">
                     <h2>Pawn System</h2>
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
+                        <li><a href="{{ route('dashboard') }}"><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
                         <li><a href="{{ route('customer') }}"><i class="fa-solid fa-people-roof iconHide"></i> Customer</a></li>
-                        <li><a href=""><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
+                        <li><a href="{{ route('pawnitem') }}"><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
                         <li><a href=""><i class="fa-solid fa-box iconHide"></i> Item Appraisal</a></li>
                         <li><a href=""><i class="fa-solid fa-landmark iconHide"></i> Loan cintract</a></li>
                     </ul>
@@ -81,6 +81,37 @@
             </section>
 
             <section class="graphBoard">
+
+                <!--  Crucial protection token for Laravel forms -->
+            <form action="{{ route('customer.store') }}" method="POST">
+                @csrf
+                        <div>
+                            <label>Name:</label><br>
+                            <input type="text" name="name" maxlength="50" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Passport Number:</label><br>
+                            <input type="text" name="passport" maxlength="15" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Phone Number:</label><br>
+                            <input type="text" name="phone" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Pledge Item:</label><br>
+                            <input type="text" name="pledge" maxlength="50" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Status:</label><br>
+                            <input type="number" name="status" placeholder="e.g. 1" required>
+                        </div>
+                        <br>
+                        <button type="submit">Save Customer</button>
+                    </form>
                 
             </section>
            

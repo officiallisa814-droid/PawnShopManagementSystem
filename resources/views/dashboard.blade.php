@@ -20,7 +20,7 @@
                 <div class="topMenu">
                     <h2>Pawn System</h2>
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
+                        <li><a href="{{ route('dashboard') }}"><i class="fa-solid fa-house iconHide"></i> Dashboard</a></li>
                         <li><a href="{{ route('customer') }}"><i class="fa-solid fa-people-roof iconHide"></i> Customer</a></li>
                         <li><a href="{{ route('pawnitem') }}"><i class="fa-solid fa-layer-group iconHide"></i> Pawn Item</a></li>
                         <li><a href=""><i class="fa-solid fa-box iconHide"></i> Item Appraisal</a></li>
@@ -103,7 +103,7 @@
 
                     <div class="card">
                         <h2>Items Ready for Auction</h2>
-                        <h3>30</h3>
+                        <h3>39</h3>
                         <!-- <p>200 users</p> -->
                     </div>
                    

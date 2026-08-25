@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/pawnitem/new', [CustomerController::class, 'store'])->name('customer.store');
 
 Route::get('/', function () {
     return view('welcome');
