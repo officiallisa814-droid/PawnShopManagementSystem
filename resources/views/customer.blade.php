@@ -102,26 +102,93 @@
         <hr style="background-color: #ffd001; height: 1px; border: none;">
 
 
-        <!-- ============================== Pop center ================= -->
+        <!-- ============================== Pop center ID================= -->
          <div class="layout-id">
+            <div class="id-date">
+                <p>ID Expiry Date</p><br>
+                <input type="date" class="date" name="date"><br>
+                <br>
+                <p>Phone Number1</p><br>
+                <input type="number" name="phone-num1" class="phone-num1" placeholder="Phone Number 1"><br>
+            </div>
 
+            <div class="id-upload">
+                <p>ID Image Upload</p><br>
+                <input type="file" class="upload-file" name="upload-file"><br>
+                <br>
+                <p>Phone Number2</p><br>
+                <input type="number" name="phone-num2"
+                class="phone-num2" placeholder="Phone Number 2"><br>
+            </div>
          </div>
+
+         <!--==================== Home Address =================  -->
+         <div class="layout-home-address">
+            <p>Home Address</p><br>
+            <input type="address" name="address" class="address" placeholder="Home Address">
+         </div>
+
+         <!-- ================================Emergency Contact Name ============-->
+
+         <div class="grid-layout-emergency">
+            <div class="emergency-name">
+                <p>Emergency Contact Name</p><br>
+                <input type="text" name="emer-name" class="emer-name" placeholder="Emergency Name"><br>
+
+                <p>Initial Pawn Amount (option)</p><br>
+                <button class="btn-money">$0.00</button>
+
+                <p>Note</p>
+                    <input type="text" class="note" name="note" placeholder="note">
+            </div>
+
+            <div class="emergency-phone">
+                <p>Emergency Contact Phone</p><br>
+                <input type="text" name="emer-phone" class="emer-phone" placeholder="Emergency Phone"><br>
+
+                <p>Initial Pawn Amount (option)</p><br>
+                <select name="item" class="item">
+                    <option value="">Select Item Type</option>
+                    <option value="">Select Item Type</option>
+                    <option value="">Select Item Type</option>
+                </select>
+            </div>
+         </div>
+            <br>
+         <!-- ====================Footer Pup=============== -->
+          <div class="footer-pup">
+                <div>
+                    
+                </div>
+                
+                <div>
+                    <button class="btn-cancel">Cancel</button>
+                    <button class="btn-save">Save</button>
+                </div>
+          </div>
     </div>
+
+    <!-- ============================= Java Alert Pup================= -->
     <script>
         const btnOpen = document.querySelector('.btn-add-customer');
         const popup = document.querySelector('.popup');
+        const btnCancel = document.querySelector('.btn-cancel');
 
         btnOpen.addEventListener('click', (event)=>{
             popup.style.display= 'block';
             event.stopPropagation();
         });
 
-        window.addEventListener('click', (event) => {
-        // If the pop-up is currently visible AND the user clicked something that is NOT inside the pop-up box...
-        if (popup.style.display === 'block' && !popup.contains(event.target)) {
-            popup.style.display = 'none'; // Hide it!
-        }
+        btnCancel.addEventListener('click', ()=>{
+            popup.style.display= 'none';
         });
+
+        // window.addEventListener('click', (event) => {
+        // // If the pop-up is currently visible AND the user clicked something that is NOT inside the pop-up box...
+        // if (popup.style.display === 'block' && !popup.contains(event.target)) {
+        //     popup.style.display = 'none'; // Hide it!
+        // }
+        // });
     </script>
 
 <!-- ============================== Table show customer ======================== -->

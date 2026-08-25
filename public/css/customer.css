@@ -230,7 +230,7 @@ table td{
     color: #ffff;
     justify-content: center;
     margin: 0 auto;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -270,13 +270,53 @@ table td{
     grid-template-columns: 1fr 1fr;
 }
 
-.national-id, .passport-num{
+.layout-id, 
+.grid-layout-emergency{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-pup{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.national-id, 
+.passport-num, 
+.date,
+.phone-num1,
+.phone-num2,
+.upload-file,
+.address,
+.item,
+.emer-name,
+.emer-phone{
+    padding: 8px;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    min-width: 95%;
+}
+.note{
     padding: 8px;
     border: 1px solid greenyellow;
     border-radius: 5px;
     min-width: 90%;
 }
+.btn-cancel, 
+.btn-save,
+.btn-money{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.btn-save{
+    background-color: #439eff;
+
+}
 /* ============================Responsive========================== */
 @media (max-width: 932px) {
     .cards{

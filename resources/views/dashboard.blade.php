@@ -106,37 +106,10 @@
                         <h3>30</h3>
                         <!-- <p>200 users</p> -->
                     </div>
-                    <div class="card">
-                        <h2>Total Customers</h2>
-                        <h3>200 users</h3>
-                        <p>200 users</p>
-                        <p>200 users</p>
-                    </div>
-
-                    <div class="card">
-                        <h2>Items Ready for Auction</h2>
-                        <h3>30</h3>
-                        <!-- <p>200 users</p> -->
-                    </div>
+                   
                 </div>
             </section>
-            <section class="graphBoard">
-                <div class="cards-two">
-                    <div class="card">
-                        <h2>Total Customers</h2>
-                        <h3>200 users</h3>
-                        <p>200 users</p>
-                        <p>200 users</p>
-                        <p>200 users</p>
-                    </div>
-
-                    <div class="card">
-                        <h2>Items Ready for Auction</h2>
-                        <h3>30</h3>
-                        <!-- <p>200 users</p> -->
-                    </div>
-                </div>
-            </section>
+           
         </main>
 
     </div>
