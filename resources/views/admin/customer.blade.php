@@ -41,7 +41,7 @@
         <!-- ======================= Main ============================= -->
         <div class="main">
             <header class="box-header">
-                <h2>Customer</h2>
+                <h2>Admin</h2>
                 <div class="search-box">
                     <i class="fa-solid fa-circle-user"></i>
                     <i class="fa-solid fa-bell"></i>

@@ -52,7 +52,7 @@
 
 
             <section class="box">
-                <h2>Welcome, Customer</h2>
+                <h2>Welcome, Admin</h2>
                 <div class="cards">
                     <div class="card">
                         <h2>Total Customers</h2>

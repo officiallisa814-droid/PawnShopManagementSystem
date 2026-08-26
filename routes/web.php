@@ -12,17 +12,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/pawnitem/new', [CustomerController::class, 'store'])->name('customer.store');
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// This one is already correct!
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard'); // ត្រូវតែ admin.dashboard
 })->name('dashboard');
+
+//  FIXED: Added 'admin.' prefix
 Route::get('/customer', function () {
-    return view('customer');
+    return view('admin.customer'); 
 })->name('customer');
+
+//  FIXED: Added 'admin.' prefix
 Route::get('/pawnitem', function () {
-    return view('pawnitem');
+    return view('admin.pawnitem'); 
 })->name('pawnitem');
+
+Route::post('/pawnitem/new', [CustomerController::class, 'store'])->name('customer.store');
